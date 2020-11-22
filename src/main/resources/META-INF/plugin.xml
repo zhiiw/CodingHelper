@@ -11,7 +11,12 @@
         <applicationService serviceImplementation="com.github.zhiiw.codinghelper.services.MyApplicationService"/>
         <projectService serviceImplementation="com.github.zhiiw.codinghelper.services.MyProjectService"/>
     </extensions>
-
+    <actions>
+        <group id="MyPlugin.SampleMenu" text="Sample Menu" description="Sample menu">
+            <add-to-group group-id="MainMenu" anchor="last"  />
+            <action id="Myplugin.Textboxes" class="HelloWorldAction" text="Text Boxes" description="A test menu item" />
+        </group>
+    </actions>
     <applicationListeners>
         <listener class="com.github.zhiiw.codinghelper.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
