@@ -10,10 +10,10 @@ public class HelloWorldAction extends AnAction {
     @Override
     public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
         Project project = anActionEvent.getData(PlatformDataKeys.PROJECT);
-        StringBuffer dlgMsg = new StringBuffer(event.getPresentation().getText() + " Selected!");
-        String dlgTitle = event.getPresentation().getDescription();
+        StringBuffer dlgMsg = new StringBuffer(AnActionEvent.getPresentation().getText() + " Selected!");
+        String dlgTitle = AnActionEvent.getPresentation().getDescription();
         // If an element is selected in the editor, add info about it.
-        Navigatable nav = event.getData(CommonDataKeys.NAVIGATABLE);
+        Navigatable nav = AnActionEvent.getData(CommonDataKeys.NAVIGATABLE);
         if (nav != null) {
             dlgMsg.append(String.format("\nSelected Element: %s", nav.toString()));
         }
