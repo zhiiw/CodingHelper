@@ -17,8 +17,29 @@
             <action id="Myplugin.Textboxes" class="HelloWorldAction" text="Text Boxes" description="A test menu item" />
         </group>
     </actions>
+    <application-components>
+        <component><implementation-class>com.github.zhiiw.codinghelper.CodingHelper</implementation-class></component>
+    </application-components>
     <applicationListeners>
-        <listener class="com.github.zhiiw.codinghelper.listeners.MyProjectManagerListener"
+        <listener class="com.github.zhiiw.codinghelper.CustomEditorMouseListener"
+                  topic="com.intellij.openapi.editor.event.EditorMouseListener"/>
+    </applicationListeners>
+    <applicationListeners>
+        <listener class="com.github.zhiiw.codinghelper.ProjectListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
+    </applicationListeners>
+    <applicationListeners>
+        <listener class="com.github.zhiiw.codinghelper.CustomDocumentListener"
+                  topic="com.intellij.openapi.editor.event.DocumentListener"/>
+    </applicationListeners>
+
+    <applicationListeners>
+        <listener class="com.github.zhiiw.codinghelper.CustomVisibleAreaListener"
+                  topic="com.intellij.openapi.editor.event.VisibleAreaListener;
+"/>
+    </applicationListeners>
+    <applicationListeners>
+        <listener class="com.github.zhiiw.codinghelper.SaveListener"
+                  topic="com.intellij.openapi.fileEditor.FileDocumentManagerListener;"/>
     </applicationListeners>
 </idea-plugin>
