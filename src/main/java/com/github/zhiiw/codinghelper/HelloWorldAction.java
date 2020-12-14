@@ -14,13 +14,13 @@ public class HelloWorldAction extends AnAction {
     public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
 
         Project project = anActionEvent.getData(PlatformDataKeys.PROJECT);
-        StringBuffer dlgMsg =new StringBuffer(anActionEvent.getPresentation().getText()+"Selected.");
+        StringBuffer dlgMsg =new StringBuffer("The plugin is developed by bjtu se1902 zhiiwang.It is a time-counting plugin.");
         String dlgTitle = anActionEvent.getPresentation().getDescription();
         // If an element is selected in the editor, add info about it.
         Navigatable navigatable =anActionEvent.getData(CommonDataKeys.NAVIGATABLE);
 
         if (navigatable != null) {
-            dlgMsg.append(String.format("\nSelected Element: %s", navigatable.toString()));
+            dlgMsg.append("The plugin is developed by bjtu se1902 zhiiwang.It is a time-counting plugin.");
         }
         Messages.showMessageDialog(project, dlgMsg.toString(), dlgTitle, Messages.getInformationIcon());
 

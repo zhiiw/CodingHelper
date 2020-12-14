@@ -15,8 +15,6 @@ public class CustomEditorMouseListener implements com.intellij.openapi.editor.ev
   public void mousePressed(EditorMouseEvent editorMouseEvent) {
     FileDocumentManager instance = FileDocumentManager.getInstance();
     VirtualFile file = instance.getFile(editorMouseEvent.getEditor().getDocument());
-
-
     Project project = editorMouseEvent.getEditor().getProject();
     if (CodingHelper.firstTime==0){
       final long currentTime = System.currentTimeMillis()/1000;
@@ -29,7 +27,6 @@ public class CustomEditorMouseListener implements com.intellij.openapi.editor.ev
         CodingHelper.lastTime=currentTime;
         CodingHelper.lastFile =currentFIle;
 
-        Messages.showMessageDialog(CodingHelper.firstTime+"","ee",Messages.getInformationIcon());
 
       }
     }

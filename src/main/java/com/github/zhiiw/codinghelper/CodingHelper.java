@@ -1,5 +1,6 @@
 package com.github.zhiiw.codinghelper;
 
+import com.github.zhiiw.codinghelper.core.DataBaseUse;
 import com.intellij.AppTopics;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
@@ -15,14 +16,15 @@ import java.math.BigDecimal;
 
 
 public class CodingHelper implements ApplicationComponent {
-  public static boolean isState =true;//which means you are anti indulged or study pattern.
+  public static boolean isState =false;//which means you are anti indulged or study pattern.
   public static MessageBusConnection connection;
   public static String lastFile =null;
   public static long lastTime=0;
   public static long firstTime=0;
   @Override
   public void initComponent() {
-    Messages.showMessageDialog("ee ","eeee",Messages.getInformationIcon());
+    DataBaseUse.addNewDay();
+
     setupListeners();
   }
 
@@ -31,7 +33,10 @@ public class CodingHelper implements ApplicationComponent {
 
   }
   public static boolean enoughTimePassed(long time){
-    return CodingHelper.lastTime+120<time;
+    if (CodingHelper.lastTime+1200<time){
+      return true;
+    }
+    return CodingHelper.lastTime+1200<time;
   }
   public static void setupListeners(){
     ApplicationManager.getApplication().invokeLater(new Runnable() {

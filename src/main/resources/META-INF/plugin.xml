@@ -12,9 +12,9 @@
         <projectService serviceImplementation="com.github.zhiiw.codinghelper.services.MyProjectService"/>
     </extensions>
     <actions>
-        <group id="MyPlugin.SampleMenu" text="Sample Menu" description="Sample menu">
+        <group id="MyPlugin.SampleMenu" text="About" description="Sample menu">
             <add-to-group group-id="MainMenu" anchor="last"  />
-            <action id="Myplugin.Textboxes" class="HelloWorldAction" text="Text Boxes" description="A test menu item" />
+            <action id="Myplugin.Textboxes" class="HelloWorldAction" text="Developer Information" description="Developer Information" />
         </group>
     </actions>
     <application-components>

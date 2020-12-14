@@ -1,5 +1,7 @@
 package com.github.zhiiw.codinghelper;
 
+import com.github.zhiiw.codinghelper.core.CheckTheLanguage;
+import com.github.zhiiw.codinghelper.core.DataBaseUse;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.event.DocumentEvent;
 import com.intellij.openapi.editor.event.DocumentListener;
@@ -18,6 +20,9 @@ public class CustomDocumentListener implements DocumentListener {
     Document document = documentEvent.getDocument();
     FileDocumentManager instance = FileDocumentManager.getInstance();
     VirtualFile file = instance.getFile(document);
+    String fileName = file != null ? file.getName() : null;
+
+
     if (CodingHelper.firstTime==0){
       final long currentTime = System.currentTimeMillis()/1000;
       CodingHelper.firstTime=currentTime;
@@ -33,8 +38,9 @@ public class CustomDocumentListener implements DocumentListener {
       if (!currentFIle.equals(CodingHelper.lastFile)||CodingHelper.enoughTimePassed(currentTime)){
         CodingHelper.lastTime=currentTime;
         CodingHelper.lastFile =currentFIle;
+        DataBaseUse.updateTime(CheckTheLanguage.checkLanguage(fileName),(currentTime-CodingHelper.firstTime)/60);
       }
-      Messages.showMessageDialog(currentTime+" "+CodingHelper.firstTime,"ee",Messages.getInformationIcon());
+
 
     }
   }

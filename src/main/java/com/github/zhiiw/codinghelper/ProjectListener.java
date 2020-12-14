@@ -1,5 +1,6 @@
 package com.github.zhiiw.codinghelper;
 
+import com.github.zhiiw.codinghelper.core.DataBaseUse;
 import com.github.zhiiw.codinghelper.core.GetPoem;
 import com.intellij.notification.Notification;
 import com.intellij.notification.NotificationDisplayType;
@@ -19,7 +20,6 @@ public class ProjectListener implements ProjectManagerListener {
   @Override
   public void projectOpened(@NotNull Project project) {
     try {
-
       Messages.showMessageDialog(project, GetPoem.getPoem(),"Daily poems",Messages.getInformationIcon());
     } catch (IOException e) {
       e.printStackTrace();
@@ -28,13 +28,13 @@ public class ProjectListener implements ProjectManagerListener {
     if (ApplicationManager.getApplication().isUnitTestMode()) {
       return;
     }
-    if (CodingHelper.isState) {
+    if (CodingHelper.isState&&CodingHelper.lastTime-CodingHelper.firstTime>=1000) {
       String title = String.format("Opening Project \"%s\"", project.getName());
       String message = "<br>You have achieved today 's language learning goals .<br><br>" + "This is not an error<br><br>";
       Messages.showMessageDialog(project, message, title, Messages.getInformationIcon());
     }else if (!CodingHelper.isState&&CodingHelper.lastTime-CodingHelper.firstTime>=1000){
       String title = String.format("Opening Project \"%s\"", project.getName());
-      String message = "<br>You have reached today 's language learning limits .<br><br>" + "Please shut down your ide<br><br>";
+      String message = "You have reached today 's language learning limits ." + "Please shut down your ide";
 
     }
   }

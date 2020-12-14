@@ -16,10 +16,10 @@ public class SaveListener implements FileDocumentManagerListener {
     VirtualFile file = instance.getFile(document);
 
     String currentFile =instance.getFile(document).getPath();
-    long currentTime = System.currentTimeMillis() / 1000;
+    /**long currentTime = System.currentTimeMillis() / 1000;
 
     CodingHelper.lastFile = currentFile;
-    CodingHelper.lastTime = currentTime;
+    CodingHelper.lastTime = currentTime;*/
   }
 
   @Override

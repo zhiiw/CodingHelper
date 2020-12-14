@@ -12,11 +12,13 @@ public class CustomVisibleAreaListener implements VisibleAreaListener {
     FileDocumentManager instance = FileDocumentManager.getInstance();
     VirtualFile file = instance.getFile(visibleAreaEvent.getEditor().getDocument());
     Project project = visibleAreaEvent.getEditor().getProject();
+    /**
     if (CodingHelper.firstTime==0){
       final long currentTime = System.currentTimeMillis()/1000;
       CodingHelper.firstTime=currentTime;
     }
     long currentTime = System.currentTimeMillis() / 1000;
     CodingHelper.lastTime = currentTime;
+     **/
   }
 }
