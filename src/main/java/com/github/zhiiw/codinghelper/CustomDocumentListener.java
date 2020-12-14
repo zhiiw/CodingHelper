@@ -33,15 +33,14 @@ public class CustomDocumentListener implements DocumentListener {
         long border =System.currentTimeMillis()/1000-time;
         CodingHelper.firstTime+=border;
       }
-      String currentFIle =file.getPath();
+      String currentFIle =  file.getPath();
       final long currentTime = System.currentTimeMillis()/1000;
-      if (!currentFIle.equals(CodingHelper.lastFile)||CodingHelper.enoughTimePassed(currentTime)){
+      if (currentFIle.equals(CodingHelper.lastFile)&&CodingHelper.enoughTimePassed(currentTime)){
+        DataBaseUse.updateTime(CheckTheLanguage.checkLanguage(fileName),(currentTime-CodingHelper.lastTime)/60);
+
         CodingHelper.lastTime=currentTime;
         CodingHelper.lastFile =currentFIle;
-        DataBaseUse.updateTime(CheckTheLanguage.checkLanguage(fileName),(currentTime-CodingHelper.firstTime)/60);
       }
-
-
     }
   }
 }

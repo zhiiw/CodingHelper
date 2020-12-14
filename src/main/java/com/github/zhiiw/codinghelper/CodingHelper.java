@@ -33,10 +33,10 @@ public class CodingHelper implements ApplicationComponent {
 
   }
   public static boolean enoughTimePassed(long time){
-    if (CodingHelper.lastTime+1200<time){
+    if (CodingHelper.lastTime+120<time){
       return true;
     }
-    return CodingHelper.lastTime+1200<time;
+    return CodingHelper.lastTime+120<time;
   }
   public static void setupListeners(){
     ApplicationManager.getApplication().invokeLater(new Runnable() {

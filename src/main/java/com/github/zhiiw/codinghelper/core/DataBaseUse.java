@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 
 public class DataBaseUse {
   static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-  static final String DB_URL = "jdbc:mysql://*.*.*.*:3306/test?useSSL=false&serverTimezone=UTC";
+  static final String DB_URL = "jdbc:mysql://47.94.162.148:3306/test?useSSL=false&serverTimezone=UTC";
 
   // 数据库的用户名与密码，需要根据自己的设置
   static final String USER = "root";
