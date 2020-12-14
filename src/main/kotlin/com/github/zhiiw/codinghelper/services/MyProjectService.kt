@@ -1,5 +1,5 @@
-package com.github.zhiiw.codinghelper.services
-/**
+/**package com.github.zhiiw.codinghelper.services
+
 import com.intellij.openapi.project.Project
 import com.github.zhiiw.codinghelper.MyBundle
 
