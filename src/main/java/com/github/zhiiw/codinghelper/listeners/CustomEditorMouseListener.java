@@ -1,5 +1,6 @@
-package com.github.zhiiw.codinghelper;
+package com.github.zhiiw.codinghelper.listeners;
 
+import com.github.zhiiw.codinghelper.CodingHelper;
 import com.intellij.notification.NotificationGroup;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.editor.event.EditorMouseEvent;

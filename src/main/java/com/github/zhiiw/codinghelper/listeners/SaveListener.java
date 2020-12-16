@@ -1,4 +1,4 @@
-package com.github.zhiiw.codinghelper;
+package com.github.zhiiw.codinghelper.listeners;
 
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.fileEditor.FileDocumentManager;

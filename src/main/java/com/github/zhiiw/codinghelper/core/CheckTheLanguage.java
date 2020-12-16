@@ -12,7 +12,7 @@ public class CheckTheLanguage {
         stringTokenizer.nextToken();
         String language =stringTokenizer.nextToken();
         if (lang.equals("java")||lang.equals("c")||lang.equals("cpp")||lang.equals("js")||lang.equals("go")||lang.equals("hs")||lang.equals("kt")||lang.equals("rs")||lang.equals("py")){
-            return "other";
+            return "other";//according to the . to judge the lsanguage
         }
         return language;
     }

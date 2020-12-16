@@ -1,14 +1,14 @@
 package com.github.zhiiw.codinghelper;
 
 import com.github.zhiiw.codinghelper.core.DataBaseUse;
+import com.github.zhiiw.codinghelper.listeners.CustomDocumentListener;
+import com.github.zhiiw.codinghelper.listeners.CustomEditorMouseListener;
+import com.github.zhiiw.codinghelper.listeners.CustomVisibleAreaListener;
+import com.github.zhiiw.codinghelper.listeners.SaveListener;
 import com.intellij.AppTopics;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.components.BaseComponent;
 import com.intellij.openapi.editor.EditorFactory;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
 
@@ -23,7 +23,7 @@ public class CodingHelper implements ApplicationComponent {
   public static long firstTime=0;
   @Override
   public void initComponent() {
-    DataBaseUse.addNewDay();
+    DataBaseUse.addNewDay();//add a new day
 
     setupListeners();
   }
@@ -33,8 +33,8 @@ public class CodingHelper implements ApplicationComponent {
 
   }
   public static boolean enoughTimePassed(long time){
-    if (CodingHelper.lastTime+120<time){
-      return true;
+    if (CodingHelper.lastTime+60<time){
+      return true;//each two minutes upload the data
     }
     return CodingHelper.lastTime+120<time;
   }
@@ -45,7 +45,7 @@ public class CodingHelper implements ApplicationComponent {
         MessageBus messageBus =ApplicationManager.getApplication().getMessageBus();
         connection =messageBus.connect();
         connection.subscribe(AppTopics.FILE_DOCUMENT_SYNC,new SaveListener());
-
+        //initialize the component
         EditorFactory.getInstance().getEventMulticaster().addDocumentListener(new CustomDocumentListener());
         EditorFactory.getInstance().getEventMulticaster().addEditorMouseListener(new CustomEditorMouseListener());
         EditorFactory.getInstance().getEventMulticaster().addVisibleAreaListener(new CustomVisibleAreaListener());

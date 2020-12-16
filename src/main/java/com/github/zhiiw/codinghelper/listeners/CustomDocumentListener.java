@@ -1,5 +1,6 @@
-package com.github.zhiiw.codinghelper;
+package com.github.zhiiw.codinghelper.listeners;
 
+import com.github.zhiiw.codinghelper.CodingHelper;
 import com.github.zhiiw.codinghelper.core.CheckTheLanguage;
 import com.github.zhiiw.codinghelper.core.DataBaseUse;
 import com.intellij.openapi.editor.Document;

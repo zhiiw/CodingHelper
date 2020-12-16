@@ -1,5 +1,6 @@
-package com.github.zhiiw.codinghelper;
+package com.github.zhiiw.codinghelper.listeners;
 
+import com.github.zhiiw.codinghelper.CodingHelper;
 import com.github.zhiiw.codinghelper.core.DataBaseUse;
 import com.github.zhiiw.codinghelper.core.GetPoem;
 import com.intellij.notification.Notification;

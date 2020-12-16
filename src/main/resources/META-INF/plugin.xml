@@ -21,25 +21,25 @@
         <component><implementation-class>com.github.zhiiw.codinghelper.CodingHelper</implementation-class></component>
     </application-components>
     <applicationListeners>
-        <listener class="com.github.zhiiw.codinghelper.CustomEditorMouseListener"
+        <listener class="com.github.zhiiw.codinghelper.listeners.CustomEditorMouseListener"
                   topic="com.intellij.openapi.editor.event.EditorMouseListener"/>
     </applicationListeners>
     <applicationListeners>
-        <listener class="com.github.zhiiw.codinghelper.ProjectListener"
+        <listener class="com.github.zhiiw.codinghelper.listeners.ProjectListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
     <applicationListeners>
-        <listener class="com.github.zhiiw.codinghelper.CustomDocumentListener"
+        <listener class="com.github.zhiiw.codinghelper.listeners.CustomDocumentListener"
                   topic="com.intellij.openapi.editor.event.DocumentListener"/>
     </applicationListeners>
 
     <applicationListeners>
-        <listener class="com.github.zhiiw.codinghelper.CustomVisibleAreaListener"
+        <listener class="com.github.zhiiw.codinghelper.listeners.CustomVisibleAreaListener"
                   topic="com.intellij.openapi.editor.event.VisibleAreaListener;
 "/>
     </applicationListeners>
     <applicationListeners>
-        <listener class="com.github.zhiiw.codinghelper.SaveListener"
+        <listener class="com.github.zhiiw.codinghelper.listeners.SaveListener"
                   topic="com.intellij.openapi.fileEditor.FileDocumentManagerListener;"/>
     </applicationListeners>
 </idea-plugin>

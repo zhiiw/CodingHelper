@@ -5,11 +5,11 @@ import java.text.SimpleDateFormat;
 
 public class DataBaseUse {
   static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-  static final String DB_URL = "jdbc:mysql://47.94.162.148:3306/test?useSSL=false&serverTimezone=UTC";
+  static final String DB_URL = "jdbc:mysql://*.*.*.*:3306/test?useSSL=false&serverTimezone=UTC";
 
   // 数据库的用户名与密码，需要根据自己的设置
   static final String USER = "root";
-  static final String PASS = "111111";
+  static final String PASS = "";//use your
   SimpleDateFormat dataFormat = new SimpleDateFormat("YYYY-MM-dd");
 
   public static void updateTime(String lang,double time) {
@@ -64,7 +64,7 @@ public class DataBaseUse {
     java.util.Date date=new java.util.Date();//此时date为当前的时间
     SimpleDateFormat df = new SimpleDateFormat("YYYY-MM-dd");
     String sqlForUpdate = "INSERT INTO pluginServer_time (c,cpp,java,js,go,hs,total,kt,other,py,rs,date) VALUES(0,0,0,0,0,0,0,0,0,0,0,\""+df.format(date)
-            +"\")";
+            +"\")";//to insert into the mysqkl
 
     Connection conn = null;
     Statement stmt = null;
